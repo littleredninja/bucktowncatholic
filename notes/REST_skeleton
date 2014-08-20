@@ -1,0 +1,46 @@
+A sample of routes for a RESTful CRUD app
+
+
+# can send users to login page if not logged in for access
+
+before "/comments*" do
+	redirect "/login" if session[:user_id].nil?
+end
+
+#index
+get "/comments" do
+end
+
+#show
+get "/comments/:id" do
+end
+
+#new
+get "/comments/new" do
+	erb :"comments/new"
+end
+
+#create
+get "/comments" do 
+	@comment = Comment.new(params[:comment])
+	if comment.save
+		redirect "/comments"
+	else
+		erb :"comments/new" #can add error message, use @comment to repopulate the form
+end
+
+#edit
+get "/comments/:id/edit" do
+	@comment = Comment.find(params[:id])
+	erb :"comments/edit"
+end
+
+#update
+put "/comments/:id" do
+	@comment = Comment.find(params[:id])
+	if @comment.update(params[:comment])
+		redirect "/comments"
+	else
+		erb :"comments/edit"
+	end
+end
