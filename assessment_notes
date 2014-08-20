@@ -5,27 +5,7 @@
 4. JQUERY/AJAX
 5. OOJS
 
-AR Notes *********************************************
 
-class User < ActiveRecord::Base
-	has_many :zoos, foreign_key: :zookeeper_id, 
-	has_many :animals, through: :zoos
-
-	#class_name: "User"
-
-	validates :email, presence: true, uniqueness: true
-	has_secure_password
-end
-
-class CreateUsers < ActiveRecord::Migration
-  def change
-  	create_table :users do |t|
-  		t.string :name
-  		t.string :email
-  		t.string :password_digest
-  	end
-  end
-end
 
 
 AJAX Sample Code ******************************************************

@@ -1,7 +1,5 @@
 Steps for building a CRUD App
 
-Don't forget to bundle!
-
 1. Read the instructions (if applicable)
 2. Draw the schema
 3. Create migrations
