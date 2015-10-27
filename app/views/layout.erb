@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/css/application.css">
 
   <link rel="stylesheet" href="/css/index.scss">
+  <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -20,6 +21,25 @@
   <title>J35 St. Hedwig's Young Adult Ministry - Bucktown Catholics</title>
 </head>
 <body>
-  <%= yield %>
+
+  <div class="Index-sidebar">
+    <div class="Index-sidebarImage">
+      J35 Young Adult & Young Professionals Ministry
+      <img src="website-logo.svg" />
+    </div>
+
+    <div class="Pagelinks">
+      <div class="Pagelink">
+        About Us
+      </div>
+    </div>
+
+    <div class="Index-mailList">
+      Join our mailing list to stay up-to-date with our upcoming events!
+    </div>
+  </div>
+  <div class="Index-main">
+    <%= yield %>
+  </div>
 </body>
 </html>
