@@ -6,20 +6,6 @@ get "/" do
   erb :index
 end
 
-get '/new' do
-  @event = Event.new
-  erb :"/new"
-end
-
-post '/add_event' do
-  @event = Event.create!(params[:event])
-  redirect "/"
-end
-
-get "/:event_id" do
-  @event = Event.find(params[:event_id])
-  erb :show
-end
 
 
 
@@ -57,3 +43,17 @@ get "/contact" do
 end
 
 
+get '/new' do
+  @event = Event.new
+  erb :"/new"
+end
+
+post '/add_event' do
+  @event = Event.create!(params[:event])
+  redirect "/"
+end
+
+get "/:event_id" do
+  @event = Event.find(params[:event_id])
+  erb :show
+end
