@@ -20,6 +20,8 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 
 require 'erb'
+require 'better_errors'
+require 'binding_of_caller'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -36,6 +38,13 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+end
+
+configure :development do
+  use BetterErrors::Middleware
+  # you need to set the application root in order to abbreviate filenames
+  # within the application:
+  BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
 
 # Set up the controllers and helpers
