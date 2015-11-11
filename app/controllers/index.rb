@@ -1,4 +1,7 @@
+require 'rubygems'
+require 'sinatra'
+
 get "/" do
-  @events = Event.where("date >= ?", Date.today).order("date ASC")
+  @events = Event.upcoming
   erb :index
 end
