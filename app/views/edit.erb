@@ -1,0 +1,12 @@
+<div class="container">
+  <form action="/update_event" method="POST">
+  <input type="hidden" value="PUT" name="_method">
+  <input type="hidden" value="<%= @event.id %>" name="event_id">
+  <input value="<%= @event.title %>" name="event[title]" size="50"><br>
+  <textarea value="<%= @event.description %>" name="event[description]" rows="10" cols="50"><%= @event.description %></textarea><br>
+  <%= stringify_date(@event) %><input type=text name="event[time_string]" size="25"><br>
+  <input value="<%= @event.location %>" name="event[location]" size="32">
+  <input type="submit" value="update" />
+  <input name="_method" value="delete" type="submit">
+  </form>
+</div>

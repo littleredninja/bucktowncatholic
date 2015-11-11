@@ -6,10 +6,6 @@ get "/" do
   erb :index
 end
 
-
-
-
-
 post '/login' do
   @events = Event.upcoming
   user = User.find_by(email: params[:email])
@@ -45,11 +41,27 @@ end
 
 get '/new' do
   @event = Event.new
-  erb :"/new"
+  erb :new
 end
 
 post '/add_event' do
   @event = Event.create!(params[:event])
+  redirect "/"
+end
+
+get '/:event_id/edit' do
+  @event = Event.find(params[:event_id])
+  erb :edit
+end
+
+put '/update_event' do
+  event = Event.find(params[:event_id])
+  event.update(params[:event])
+  redirect "/"
+end
+
+delete "/update_event" do
+  Event.find(params[:event_id]).destroy
   redirect "/"
 end
 
