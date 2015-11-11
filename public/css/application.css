@@ -7,34 +7,46 @@ body {
 	margin: 0 auto;
 }
 
-.Index-sidebar {
-	width: 200px;
-	display: inline-block;
-	vertical-align: top;
+header {
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+	margin: 20px 0 10px 0;
 }
 
-.Index-sidebarImage {
-	width: 130px;
-	margin: 0 auto;
+.Subheader {
+	text-align: center;
+	font-size: .8em;
+}
+
+.Nav {
+	width: 310px;
+	margin: 20px auto;
+}
+
+.Nav-link {
+	display: inline-block;
+	text-decoration: none;
+	margin-top: 5px;
+}
+
+.Nav-linkLeft {
+
+}
+
+.Nav-linkCenter {
+	margin: 0 55px;
+}
+
+.Nav-linkRight {
+
 }
 
 .Index-main {
-	width: 70%;
+	width: 100%;
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
-}
-
-.Index-mailList {
-	margin: 10px 0;
-}
-
-.Pagelinks {
-	margin-top: 10px;
-}
-
-.Pagelink {
 	text-align: center;
-	margin: 5px 0;
-	font-weight: bold;
 }
+
