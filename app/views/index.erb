@@ -1,9 +1,29 @@
 <h2>Upcoming Events</h2>
 
 <% @events.each do |event| %>
-    <div>
-      <p><%= event.title %><p>
-      <small><%= event.description %></small>
-      <small><%= stringify_date(event) %></small>
-    </div>
+<div>
+  <p><a href="/<%= event.id %>"><%= event.title %></a><p>
+  <small><%= event.description %></small>
+  <small><%= stringify_date(event) %></small>
+  <% if logged_in? %>
+  <p><a href="/edit/<%= event.id %>">Edit</a> | <a href="#">Destroy</a></p>
+  <% end %>
+</div>
+<% end %>
+
+<% if logged_in? %>
+  <a href="/new">Create a New Event</a>
+  <a href="/logout">logout</a>
+  <%= current_user.name %>
+<% else %>
+
+  <form action="/login" method="POST">
+    <input type="email" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="Admin Login" name="login">
+  </form>
+
+  <% if @errors %>
+    <h3><%= @errors %></h3>
+  <% end %>
 <% end %>
