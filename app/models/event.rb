@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   def self.upcoming
-    where("date >= ?", Date.today).order("date ASC")
+    where("date_and_time >= ?", Date.today).order("date_and_time ASC")
   end
 
   def time_string
@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   end
 
   def time_string=(time_str)
-    self.time = Time.parse(time_str)
+    self.date_and_time = Time.parse(time_str)
   rescue ArgumentError
     @time_invalid = true
   end

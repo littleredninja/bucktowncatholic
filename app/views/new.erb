@@ -2,8 +2,7 @@
   <form action="/add_event" method="POST">
   <input value="<%= @event.title %>" name="event[title]" placeholder="Event Title"></input>
   <textarea value="<%= @event.description %>" name="event[description]" rows="10" cols="50">Write something here</textarea>
-  <input type=date value="<%= @event.date %>" name="event[date]">
-  <input type=text name="event[time_string]" placeholder="Event Time">
+  <input type=text name="event[time_string]" placeholder="July 21, 2015 at 3pm">
   <input value="<%= @event.location %>" name="event[location]" placeholder="Event Location">
   <input type="submit" value="add" />
   </form>
