@@ -20,28 +20,32 @@ post '/login' do
   else
     @errors = "Invalid password"
     erb :index
-    raise "hi"
   end
 end
 
 get '/logout' do
   session[:user_id] = nil
-  erb :index
+  redirect '/'
 end
 
 
 get "/about" do
-  "We are J35"
+  erb :about
 end
 
 get "/contact" do
-  "Contact J35"
+  erb :contact
 end
 
 
 get '/new' do
-  @event = Event.new
-  erb :new
+  if logged_in?
+    @event = Event.new
+    erb :new
+  else
+    @errors = "Please log in first"
+    erb :index
+  end
 end
 
 post '/add_event' do
@@ -49,7 +53,12 @@ post '/add_event' do
   redirect "/"
 end
 
-get '/:event_id/edit' do
+get "/events/:event_id" do
+  @event = Event.find(params[:event_id])
+  erb :show
+end
+
+get '/events/:event_id/edit' do
   @event = Event.find(params[:event_id])
   erb :edit
 end
@@ -65,7 +74,3 @@ delete "/update_event" do
   redirect "/"
 end
 
-get "/:event_id" do
-  @event = Event.find(params[:event_id])
-  erb :show
-end

@@ -1,5 +1,9 @@
 <div>
-  <h1><%= @event.title %><h1>
+  <p><%= @event.title %><p>
   <small><%= @event.description %></small>
   <small><%= stringify_date(@event) %></small>
+  <% if logged_in? %>
+  <p><a href="events/<%= @event.id %>/edit">Edit</a></p>
+  <% end %>
+  <p>Questions? <a href="/contact">Contact us</a>.</p>
 </div>

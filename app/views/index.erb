@@ -1,12 +1,17 @@
+<% first_event = @events.first %>
+
+<h2>Coming soon!</h2>
+<h3>Join us <%= stringify_date(first_event) %> for <%= first_event.title %></h3>
+
 <h2>Upcoming Events</h2>
 
 <% @events.each do |event| %>
-<div>
-  <p><a href="/<%= event.id %>"><%= event.title %></a><p>
-  <small><%= event.description %></small>
+<div class="Show-event">
+  <p class="Show-event-title"><a href="events/<%= event.id %>"><%= event.title %></a><p>
+  <small class="Show-event-description"><%= event.slug %></small>
   <small><%= stringify_date(event) %></small>
   <% if logged_in? %>
-  <p><a href="/<%= event.id %>/edit">Edit</a></p>
+  <span><a href="events/<%= event.id %>/edit">edit</a></span>
   <% end %>
 </div>
 <% end %>

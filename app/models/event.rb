@@ -13,6 +13,10 @@ class Event < ActiveRecord::Base
     @time_invalid = true
   end
 
+  def slug
+    description.slice(0..50) + "..."
+  end
+
   def validate
     errors.add(:time, "is invalid")
   end

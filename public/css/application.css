@@ -50,3 +50,23 @@ header {
 	text-align: center;
 }
 
+.Show-event {
+	text-align: left;
+}
+.Show-event a {
+	text-decoration: none;
+}
+
+.Show-event-title {
+	font-style: bold;
+	margin-bottom: 0;
+}
+
+.Show-event-description {
+	font-family: serif;
+}
+
+.Show-event p {
+	margin-top: 0;
+}
+
