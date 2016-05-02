@@ -1,0 +1,52 @@
+* {
+  font-family: 'Muli', sans-serif;
+}
+
+body {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0 10px 0;
+}
+
+.Subheader {
+  text-align: center;
+  font-size: .8em;
+}
+
+.Nav {
+  width: 310px;
+  margin: 20px auto;
+}
+
+.Nav-link {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.Nav-linkLeft {
+
+}
+
+.Nav-linkCenter {
+  margin: 0 55px;
+}
+
+.Nav-linkRight {
+
+}
+
+.Index-main {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  text-align: center;
+}
+
