@@ -22,10 +22,10 @@ configure :production do
   ActiveRecord::Base.establish_connection(
     :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
     :encoding => 'utf8',
-    :database => <%= ENV['RDS_DB_NAME'] %>,
-    :username => <%= ENV['RDS_USERNAME'] %>,
-    :password => <%= ENV['RDS_PASSWORD'] %>,
-    :host     => <%= ENV['RDS_HOSTNAME'] %>,
-    :port     => <%= ENV['RDS_PORT'] %>
+    :database => 'ebdb,
+    :username => 'jchamberlin',
+    :password => 'IluvStHedwig',
+    :host     => 'aaum2zqxjsxmjr.c7krwciheyby.us-east-1.rds.amazonaws.com',
+    :port     => 5432
   )
 end
