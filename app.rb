@@ -1,11 +1,11 @@
 require 'sinatra'
-require 'sinatra/activerecord'
-require './environments'
+# require 'sinatra/activerecord'
+# require './environments'
 
-class Event < ActiveRecord::Base
-end
+# class Event < ActiveRecord::Base
+# end
 
 get'/' do
-  @events = Event.all
+  # @events = Event.all
   erb :index
 end
